@@ -1,0 +1,22 @@
+section {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}

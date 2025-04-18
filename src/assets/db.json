@@ -1,0 +1,62 @@
+{
+  "members": [
+    {
+      "cin": "87654321",
+      "nom": "med",
+      "type": "user",
+      "createDate": "2020-01-01",
+      "id": "2"
+    },
+    {
+      "id": "2baa",
+      "cin": "777",
+      "nom": "med",
+      "type": "admin",
+      "createDate": "01-01-2025"
+    }
+  ],
+  "Events": [
+    {
+      "titre": "jeu",
+      "datedebut": "2020-01-01",
+      "datefin": "2020-01-07",
+      "lieu": "sfax",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "titre": "Messi",
+      "datedebut": "2020-01-05",
+      "datefin": "2020-01-09",
+      "lieu": "Tunis"
+    },
+    {
+      "id": "3",
+      "titre": "CR7",
+      "datedebut": "2020-01-11",
+      "datefin": "2020-01-15",
+      "lieu": "Tunis"
+    },
+    {
+      "id": "4",
+      "titre": "Birthday",
+      "datedebut": "2020-01-19",
+      "datefin": "2020-01-21",
+      "lieu": "Tunis"
+    },
+    {
+      "id": "6",
+      "titre": "Amine",
+      "datedebut": "2020-03-05",
+      "datefin": "2020-04-09",
+      "lieu": "Marsa"
+    },
+    {
+      "id": "0522",
+      "titre": "AAA",
+      "datedebut": "2025-05-01",
+      "datefin": "2025-05-07",
+      "lieu": "aaaaaa"
+    }
+  ]
+}
