@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>{{ dialogTitle }}</h2>
+
+<mat-dialog-content [formGroup]="form">
+  <div class="form-container">
+    <!-- Title Field -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Publication Title" formControlName="title" required>
+      <mat-error *ngIf="form.get('title')?.hasError('required')">Title is required</mat-error>
+    </mat-form-field>
+
+    <!-- Type Field -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Type</mat-label>
+      <input matInput placeholder="Publication Type" formControlName="type" required>
+      <mat-error *ngIf="form.get('type')?.hasError('required')">Type is required</mat-error>
+    </mat-form-field>
+
+    <!-- Link Field -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Link</mat-label>
+      <input matInput placeholder="Publication Link" formControlName="lien" required>
+      <mat-error *ngIf="form.get('lien')?.hasError('required')">Link is required</mat-error>
+    </mat-form-field>
+
+    <!-- Date Field -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Publication Date" formControlName="Date" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="form.get('Date')?.hasError('required')">Date is required</mat-error>
+    </mat-form-field>
+
+    <!-- Source PDF Field -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Source PDF</mat-label>
+      <input matInput placeholder="Source PDF Link" formControlName="sourcePDF">
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()" [disabled]="form.invalid">Save</button>
+</mat-dialog-actions>

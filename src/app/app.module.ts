@@ -36,6 +36,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { firebaseConfig } from './environement';
 import { ArticlesComponent } from './articles/articles.component';
+import { ModalArticleComponent } from './modal-article/modal-article.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ArticlesComponent } from './articles/articles.component';
     ArticlesComponent,
     ModalEventComponent,
     VisibilityComponent,
-    LoginComponent
+    LoginComponent,
+    ModalArticleComponent
   ],
   imports: [
     BrowserModule,

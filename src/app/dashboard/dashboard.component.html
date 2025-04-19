@@ -1,1 +1,42 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <h1 class="dashboard-title">Dashboard</h1>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="loading-spinner">
+    <mat-spinner diameter="50" color="primary"></mat-spinner>
+  </div>
+
+  <div class="stats-container" *ngIf="!isLoading">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <mat-icon>group</mat-icon>
+      </div>
+      <div class="stat-content">
+        <h3>Members</h3>
+        <p class="stat-value">{{ membersCount }}</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <mat-icon>article</mat-icon>
+      </div>
+      <div class="stat-content">
+        <h3>Publications</h3>
+        <p class="stat-value">{{ publicationsCount }}</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <mat-icon>event</mat-icon>
+      </div>
+      <div class="stat-content">
+        <h3>Events</h3>
+        <p class="stat-value">{{ eventsCount }}</p>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
