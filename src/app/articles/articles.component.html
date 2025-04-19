@@ -1,0 +1,69 @@
+<div class="articles-container">
+  <h1>Publications</h1>
+
+  <!-- Add Button -->
+  <div class="add-button-container">
+    <button mat-raised-button color="primary" (click)="addArticle()">
+      <mat-icon>add</mat-icon> Add Publication
+    </button>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <!-- No Articles Found -->
+  <div *ngIf="!isLoading && articles.length === 0" class="no-articles">
+    <p>No publications found.</p>
+  </div>
+
+  <!-- Articles Table -->
+  <div *ngIf="!isLoading && articles.length > 0">
+    <table mat-table [dataSource]="articles" class="mat-elevation-z8">
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let article"> {{ article.title }} </td>
+      </ng-container>
+
+      <!-- Type Column -->
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let article"> {{ article.type }} </td>
+      </ng-container>
+
+      <!-- Link Column -->
+      <ng-container matColumnDef="lien">
+        <th mat-header-cell *matHeaderCellDef> Link </th>
+        <td mat-cell *matCellDef="let article"> <a [href]="article.lien" target="_blank">{{ article.lien }}</a> </td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let article"> {{ article.Date | date }} </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let article">
+          <button mat-icon-button color="primary" (click)="viewArticle(article.id)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" (click)="editArticle(article.id)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteArticle(article.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+/* Remove the direct theme import as it's handled by providePrimeNG
+// @import "node_modules/@primeng/themes/aura/theme.css";
+
+/* @import '@angular/material/prebuilt-themes/indigo-pink.css'; */ /* Removed Material theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); // Re-enable Inter font
+
+/* Remove custom :root variables to rely on PrimeNG theme */
+/*
+:root {
+  --primary-color: #3f51b5;
+  --accent-color: #ff4081;
+  --warn-color: #f44336;
+  --success-color: #4caf50;
+  --background-color: #f8f9fa;
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.54);
+  --divider-color: rgba(0, 0, 0, 0.12);
+  --white: #ffffff;
+  --secondary-color: #eeeeee;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --border-radius: 8px;
+  --container-max-width: 1200px;
+}
+*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  /* Let PrimeNG theme handle font, background, color */
+  font-family: 'Inter', sans-serif; // Re-enable Inter font override
+  /* background-color: var(--background-color); */
+  /* color: var(--text-primary); */
+  -webkit-font-smoothing: antialiased; /* Common reset */
+  -moz-osx-font-smoothing: grayscale; /* Common reset */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Remove leftover Material styles */
+/*
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mdc-text-field--outlined {
+  --mdc-outlined-text-field-outline-color: var(--divider-color);
+}
+
+// Dialog styles
+.mat-mdc-dialog-container {
+  --mdc-dialog-container-color: var(--white);
+  padding: var(--spacing-lg);
+}
+
+.mat-mdc-dialog-content {
+  max-height: 65vh;
+  padding: 0;
+  margin: var(--spacing-lg) 0;
+}
+
+.mat-mdc-dialog-content form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.mat-mdc-dialog-actions {
+  padding: 0;
+  margin: 0;
+  min-height: 52px;
+  gap: var(--spacing-sm);
+}
+
+.mat-mdc-dialog-title {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+*/

@@ -58,5 +58,31 @@
       "datefin": "2025-05-07",
       "lieu": "aaaaaa"
     }
-  ]
+  ],
+  "Pub": [
+      {
+        "id": "1245",
+        "title": "Pub1",
+        "type": "Conference",
+        "lien": "https://www.google.com",
+        "Date": "2025-03-05T23:00:00.000Z",
+        "sourcePDF": "https://www.google.com"
+      },
+      {
+        "id": "1246",
+        "title": "Pub2",
+        "type": "Conference",
+        "lien": "https://www.google.com",
+        "Date": "2025-03-05T23:00:00.000Z",
+        "sourcePDF": "https://www.google.com"
+      },
+      {
+        "id": "1247",
+        "title": "Pub3",
+        "type": "Conference",
+        "lien": "https://www.google.com",
+        "Date": "2025-03-05T23:00:00.000Z",
+        "sourcePDF": "https://www.google.com"
+      }
+    ]
 }
