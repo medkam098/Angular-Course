@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { PubService } from 'src/services/pub.service';
 import { Pub } from 'src/models/Pub';
 import { ModalArticleComponent } from '../modal-article/modal-article.component';
@@ -11,23 +14,29 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
-  articles: Pub[] = [];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  dataSource: MatTableDataSource<Pub>;
   isLoading: boolean = true;
   displayedColumns: string[] = ['title', 'type', 'lien', 'Date', 'actions'];
 
   constructor(
     private pubService: PubService,
     private dialog: MatDialog
-  ) {}
+  ) {
+    this.dataSource = new MatTableDataSource<Pub>();
+  }
 
   ngOnInit(): void {
     this.fetchArticles();
   }
 
   fetchArticles(): void {
+    this.isLoading = true;
     this.pubService.getPublications().subscribe({
       next: (data: Pub[]) => {
-        this.articles = data;
+        this.dataSource.data = data;
         this.isLoading = false;
       },
       error: (error) => {
@@ -35,6 +44,20 @@ export class ArticlesComponent implements OnInit {
         this.isLoading = false;
       }
     });
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   addArticle(): void {
@@ -83,7 +106,8 @@ export class ArticlesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.pubService.deletePublication(id).subscribe(() => {
-          this.articles = this.articles.filter((article) => article.id !== id);
+          // Refresh the data after deletion
+          this.fetchArticles();
         });
       }
     });

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common'; // Add this
+import './chart-auto'; // Import chart.js/auto
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MemberComponent } from './member/member.component';
@@ -37,7 +38,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { firebaseConfig } from './environement';
 import { ArticlesComponent } from './articles/articles.component';
 import { ModalArticleComponent } from './modal-article/modal-article.component';
+import { NgChartsModule } from 'ng2-charts';
 
+// PrimeNG Imports
+import { ChartModule } from 'primeng/chart';
+import { CardModule } from 'primeng/card';
+import { TooltipModule } from 'primeng/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +85,12 @@ import { ModalArticleComponent } from './modal-article/modal-article.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgChartsModule,
+    // PrimeNG modules
+    ChartModule,
+    CardModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

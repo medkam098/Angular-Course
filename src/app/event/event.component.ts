@@ -25,6 +25,7 @@ export class EventComponent implements AfterViewInit,OnInit {
     'Actions',
   ];
 dataSource: MatTableDataSource<Event>;
+isLoading: boolean = true;
 
 constructor(private ES:EventService,private dialog:MatDialog) {
   this.dataSource = new MatTableDataSource();
@@ -32,11 +33,18 @@ constructor(private ES:EventService,private dialog:MatDialog) {
 ngOnInit():void{
     this.fetchData();
 }
-fetchData()
-{
-  this.ES.getAllEvents().subscribe((data)=>{
-  this.dataSource.data=data
-});
+fetchData() {
+  this.isLoading = true;
+  this.ES.getAllEvents().subscribe({
+    next: (data) => {
+      this.dataSource.data = data;
+      this.isLoading = false;
+    },
+    error: (error) => {
+      console.error('Error fetching events:', error);
+      this.isLoading = false;
+    }
+  });
 }
 ngAfterViewInit() {
   this.dataSource.paginator = this.paginator;

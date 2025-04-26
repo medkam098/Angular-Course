@@ -51,6 +51,12 @@
   margin-right: var(--spacing-sm);
 }
 
+.filter-container {
+  margin-bottom: var(--spacing-lg);
+  width: 100%;
+  max-width: 400px;
+}
+
 .loading-spinner {
   display: flex;
   justify-content: center;

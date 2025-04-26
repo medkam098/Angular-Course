@@ -1,17 +1,45 @@
 {
   "members": [
     {
-      "cin": "87654321",
+      "cin": "1455265221",
       "nom": "med",
-      "type": "user",
+      "type": "student",
+      "createDate": "2020-01-01",
+      "id": "14552221"
+    },
+    {
+      "id": "1254264265",
+      "cin": "15123654",
+      "nom": "salah",
+      "type": "student",
+      "createDate": "01-01-2025"
+    },
+    {
+      "cin": "87654321",
+      "nom": "lboss",
+      "type": "teacher",
+      "createDate": "2020-01-01",
+      "id": "148623"
+    },
+    {
+      "id": "2baa",
+      "cin": "777",
+      "nom": "ali",
+      "type": "student",
+      "createDate": "01-01-2025"
+    },
+    {
+      "cin": "87654321",
+      "nom": "melah",
+      "type": "student",
       "createDate": "2020-01-01",
       "id": "2"
     },
     {
       "id": "2baa",
       "cin": "777",
-      "nom": "med",
-      "type": "admin",
+      "nom": "youssef",
+      "type": "student",
       "createDate": "01-01-2025"
     }
   ],
@@ -49,14 +77,14 @@
       "titre": "Amine",
       "datedebut": "2020-03-05",
       "datefin": "2020-04-09",
-      "lieu": "Marsa"
+      "lieu": "Sousse"
     },
     {
       "id": "0522",
       "titre": "AAA",
       "datedebut": "2025-05-01",
       "datefin": "2025-05-07",
-      "lieu": "aaaaaa"
+      "lieu": "Sousse"
     }
   ],
   "Pub": [
